@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "Payroll.sln",
+    "projects": [
+      "Payroll.csproj"
+    ]
+  }
+}
