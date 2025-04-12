@@ -13,9 +13,26 @@ namespace Payroll
 {
     public partial class Schedule : Form
     {
+        public object ScheduleID { get; internal set; }
+        public TimeSpan ShiftStart { get; internal set; }
+        public TimeSpan ShiftEnd { get; internal set; }
+        public string Task { get; internal set; }
+        public int Break { get; internal set; }
+        public object EmployeeID { get; internal set; }
+
         public Schedule()
         {
             InitializeComponent();
+            LoadSchedule(DateTime.Today);
+        }
+
+        public Schedule(object scheduleID, TimeSpan shiftStart, TimeSpan shiftEnd,  string task, int breakm)
+        {
+            ScheduleID = scheduleID;
+            ShiftStart = shiftStart;
+            ShiftEnd = shiftEnd;
+            Task = task;
+            Break = breakm;
         }
 
         private void Calendar_DateChanged(object sender, DateRangeEventArgs e)
@@ -31,7 +48,7 @@ namespace Payroll
                 conn.Open();
           
                 string query = @"
-                    SELECT s.sch_ScheduleID, e.emp_FirstName, e.emp_LastName, s.sch_TimeStart, s.sch_TimeEnd, s.sch_Task
+                    SELECT s.sch_ScheduleID, e.emp_FirstName, e.emp_LastName, s.sch_TimeStart, s.sch_TimeEnd, s.sch_Task, s.sch_BreakMinutes
                     FROM schedule s
                     JOIN employeedata e ON s.sch_EmployeeID = e.emp_EmployeeID
                     WHERE s.sch_ShiftDate = @shiftDate";
@@ -49,8 +66,22 @@ namespace Payroll
         private void btnAddShift_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Shift shift = new Shift();
+            Shift shift = new Shift(this);
             shift.Show();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Homepage hp = new Homepage();
+            hp.Show();
+        }
+
+        private void btnEditShift_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Shift editShift = new Shift(dbgEmployeeSchedule.SelectedRows, this);
+            editShift.Show();
         }
     }
 }

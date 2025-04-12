@@ -32,11 +32,16 @@
             this.btnSaveSchedule = new System.Windows.Forms.Button();
             this.cmbEmployees = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtShiftStart = new System.Windows.Forms.TextBox();
-            this.txtShiftEnd = new System.Windows.Forms.TextBox();
             this.txtTask = new System.Windows.Forms.TextBox();
             this.txtBreakMinutes = new System.Windows.Forms.TextBox();
             this.dbgSchedule = new System.Windows.Forms.DataGridView();
+            this.dtpShiftStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpShiftEnd = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dbgSchedule)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +54,7 @@
             // 
             // btnSaveSchedule
             // 
-            this.btnSaveSchedule.Location = new System.Drawing.Point(689, 404);
+            this.btnSaveSchedule.Location = new System.Drawing.Point(551, 397);
             this.btnSaveSchedule.Name = "btnSaveSchedule";
             this.btnSaveSchedule.Size = new System.Drawing.Size(75, 23);
             this.btnSaveSchedule.TabIndex = 1;
@@ -74,23 +79,9 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Employee";
             // 
-            // txtShiftStart
-            // 
-            this.txtShiftStart.Location = new System.Drawing.Point(549, 129);
-            this.txtShiftStart.Name = "txtShiftStart";
-            this.txtShiftStart.Size = new System.Drawing.Size(129, 20);
-            this.txtShiftStart.TabIndex = 4;
-            // 
-            // txtShiftEnd
-            // 
-            this.txtShiftEnd.Location = new System.Drawing.Point(549, 184);
-            this.txtShiftEnd.Name = "txtShiftEnd";
-            this.txtShiftEnd.Size = new System.Drawing.Size(129, 20);
-            this.txtShiftEnd.TabIndex = 5;
-            // 
             // txtTask
             // 
-            this.txtTask.Location = new System.Drawing.Point(549, 231);
+            this.txtTask.Location = new System.Drawing.Point(549, 210);
             this.txtTask.Multiline = true;
             this.txtTask.Name = "txtTask";
             this.txtTask.Size = new System.Drawing.Size(129, 20);
@@ -98,7 +89,7 @@
             // 
             // txtBreakMinutes
             // 
-            this.txtBreakMinutes.Location = new System.Drawing.Point(549, 281);
+            this.txtBreakMinutes.Location = new System.Drawing.Point(549, 259);
             this.txtBreakMinutes.Multiline = true;
             this.txtBreakMinutes.Name = "txtBreakMinutes";
             this.txtBreakMinutes.Size = new System.Drawing.Size(129, 20);
@@ -112,16 +103,83 @@
             this.dbgSchedule.Size = new System.Drawing.Size(489, 396);
             this.dbgSchedule.TabIndex = 8;
             // 
+            // dtpShiftStart
+            // 
+            this.dtpShiftStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpShiftStart.Location = new System.Drawing.Point(549, 119);
+            this.dtpShiftStart.Name = "dtpShiftStart";
+            this.dtpShiftStart.Size = new System.Drawing.Size(129, 20);
+            this.dtpShiftStart.TabIndex = 9;
+            // 
+            // dtpShiftEnd
+            // 
+            this.dtpShiftEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpShiftEnd.Location = new System.Drawing.Point(549, 164);
+            this.dtpShiftEnd.Name = "dtpShiftEnd";
+            this.dtpShiftEnd.Size = new System.Drawing.Size(129, 20);
+            this.dtpShiftEnd.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(546, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Shift Start";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(546, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Shift End";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(546, 194);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Task";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(546, 243);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Break (minutes)";
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(713, 397);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 15;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Shift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dtpShiftEnd);
+            this.Controls.Add(this.dtpShiftStart);
             this.Controls.Add(this.dbgSchedule);
             this.Controls.Add(this.txtBreakMinutes);
             this.Controls.Add(this.txtTask);
-            this.Controls.Add(this.txtShiftEnd);
-            this.Controls.Add(this.txtShiftStart);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbEmployees);
             this.Controls.Add(this.btnSaveSchedule);
@@ -140,10 +198,15 @@
         private System.Windows.Forms.Button btnSaveSchedule;
         private System.Windows.Forms.ComboBox cmbEmployees;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtShiftStart;
-        private System.Windows.Forms.TextBox txtShiftEnd;
         private System.Windows.Forms.TextBox txtTask;
         private System.Windows.Forms.TextBox txtBreakMinutes;
         private System.Windows.Forms.DataGridView dbgSchedule;
+        private System.Windows.Forms.DateTimePicker dtpShiftStart;
+        private System.Windows.Forms.DateTimePicker dtpShiftEnd;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnBack;
     }
 }
