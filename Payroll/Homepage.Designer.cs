@@ -31,8 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnEmployeeList = new System.Windows.Forms.Button();
             this.btnSchedule = new System.Windows.Forms.Button();
-            this.btnPayroll = new System.Windows.Forms.Button();
-            this.btnFPS = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -63,31 +61,11 @@
             this.btnSchedule.UseVisualStyleBackColor = true;
             this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
-            // btnPayroll
-            // 
-            this.btnPayroll.Location = new System.Drawing.Point(41, 175);
-            this.btnPayroll.Name = "btnPayroll";
-            this.btnPayroll.Size = new System.Drawing.Size(117, 23);
-            this.btnPayroll.TabIndex = 3;
-            this.btnPayroll.Text = "Calculate Payroll";
-            this.btnPayroll.UseVisualStyleBackColor = true;
-            // 
-            // btnFPS
-            // 
-            this.btnFPS.Location = new System.Drawing.Point(41, 242);
-            this.btnFPS.Name = "btnFPS";
-            this.btnFPS.Size = new System.Drawing.Size(176, 23);
-            this.btnFPS.TabIndex = 4;
-            this.btnFPS.Text = "Create Full Payment Submission";
-            this.btnFPS.UseVisualStyleBackColor = true;
-            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 514);
-            this.Controls.Add(this.btnFPS);
-            this.Controls.Add(this.btnPayroll);
             this.Controls.Add(this.btnSchedule);
             this.Controls.Add(this.btnEmployeeList);
             this.Controls.Add(this.menuStrip1);
@@ -104,7 +82,5 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button btnEmployeeList;
         private System.Windows.Forms.Button btnSchedule;
-        private System.Windows.Forms.Button btnPayroll;
-        private System.Windows.Forms.Button btnFPS;
     }
 }

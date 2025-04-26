@@ -32,12 +32,12 @@ namespace Payroll
             
 
         }
-
         private void btnSchedule_Click(object sender, EventArgs e)
         {
             this.Hide();
             Schedule Schedule = new Schedule();
             Schedule.Show();
         }
+
     }
 }
